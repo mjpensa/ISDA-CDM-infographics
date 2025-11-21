@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-neutral-dark font-sans;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Gradient animations */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Fork path animation */
+  @keyframes fork-diverge {
+    0% {
+      transform: translateX(0) scale(1);
+    }
+    100% {
+      transform: translateX(var(--diverge-x, 0)) scale(1.05);
+    }
+  }
+
+  .animate-fork-left {
+    animation: fork-diverge 1s ease-out forwards;
+    --diverge-x: -20px;
+  }
+
+  .animate-fork-right {
+    animation: fork-diverge 1s ease-out forwards;
+    --diverge-x: 20px;
+  }
+}
