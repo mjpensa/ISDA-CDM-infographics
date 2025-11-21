@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply m-0 min-h-screen overflow-x-hidden;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  /* Narrative text styling */
+  .narrative-text {
+    @apply font-narrative text-lg leading-relaxed;
+  }
+
+  .narrative-quote {
+    @apply font-narrative text-2xl italic text-center my-8 px-8;
+  }
+
+  /* Chapter title styling */
+  .chapter-title {
+    @apply font-sans font-bold text-5xl mb-4;
+  }
+
+  .chapter-subtitle {
+    @apply font-sans text-2xl text-gray-600 mb-8;
+  }
+
+  /* Character styles */
+  .character-card {
+    @apply rounded-lg p-6 shadow-lg transition-transform hover:scale-105;
+  }
+
+  /* Path visualization */
+  .path-container {
+    @apply relative flex items-center justify-center min-h-96;
+  }
+
+  /* Comparison cards */
+  .comparison-card {
+    @apply p-6 rounded-lg border-2 transition-all duration-300;
+  }
+
+  .comparison-card:hover {
+    @apply shadow-xl transform scale-105;
+  }
+
+  /* Progress indicators */
+  .progress-bar {
+    @apply h-2 bg-gray-200 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-blue-500 transition-all duration-500;
+  }
+
+  /* Navigation dots */
+  .nav-dot {
+    @apply w-3 h-3 rounded-full transition-all duration-300 cursor-pointer;
+  }
+
+  .nav-dot.active {
+    @apply w-8 bg-blue-500;
+  }
+
+  .nav-dot:not(.active) {
+    @apply bg-gray-300 hover:bg-gray-400;
+  }
+
+  /* Scroll container */
+  .scroll-container {
+    @apply overflow-x-auto overflow-y-hidden snap-x snap-mandatory;
+    scrollbar-width: thin;
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .scroll-container::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full hover:bg-gray-500;
+  }
+
+  /* Chapter sections */
+  .chapter-section {
+    @apply min-w-full snap-center flex items-center justify-center p-8;
+  }
+
+  /* Illustration containers */
+  .illustration-container {
+    @apply flex items-center justify-center my-12;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .chapter-title {
+      @apply text-3xl;
+    }
+
+    .chapter-subtitle {
+      @apply text-xl;
+    }
+
+    .narrative-text {
+      @apply text-base;
+    }
+
+    .narrative-quote {
+      @apply text-xl px-4;
+    }
+  }
+}
+
+@layer utilities {
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Focus visible styles for accessibility */
+  .focus-outline {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  /* Text gradient utilities */
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-orange {
+    @apply bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent;
+  }
+
+  /* Background gradients */
+  .bg-gradient-chapter4-left {
+    @apply bg-gradient-to-br from-orange-400 to-red-600;
+  }
+
+  .bg-gradient-chapter4-right {
+    @apply bg-gradient-to-br from-blue-500 to-green-500;
+  }
+}
