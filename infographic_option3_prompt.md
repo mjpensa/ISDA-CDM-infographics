@@ -1,0 +1,790 @@
+# React Narrative Timeline Infographic - The Tale of Two Banking Strategies
+
+Build an interactive, story-driven React application that presents the ISDA CDM adoption story as a compelling narrative timeline. This infographic uses metaphors, characters, and visual storytelling to make complex banking technology accessible to executive and non-technical audiences.
+
+## Design Concept: "The Tale Timeline"
+
+A horizontal scrolling (or vertical on mobile) narrative journey through 5 chapters, each revealing the strategic divergence between J.P. Morgan's "Native Speaker" approach and Peers' "Translator" approach to CDM adoption.
+
+**Target Audience:** Executives, C-suite, board members, non-technical stakeholders, business strategists
+
+---
+
+## Story Structure: Five Chapters
+
+### Chapter 1: The Tower of Babel (The Problem)
+**Timeframe:** Post-2008 Financial Crisis
+**Theme:** Chaos and Fragmentation
+**Color Palette:** Dark grays, reds (chaos/crisis)
+
+**Narrative Content:**
+
+**Opening:**
+> "After the 2008 financial crisis, regulators worldwide demanded transparency. They asked banks to report every trade, but they didn't agree on a common language."
+
+**The Problem:**
+- 🇺🇸 **United States:** "We want data in Format A"
+- 🇪🇺 **Europe:** "We want data in Format B"
+- 🇯🇵 **Asia:** "We want data in Format C"
+
+**The Messy Solution:**
+Banks responded by building **"Spaghetti Architecture"** — a messy patchwork of systems designed to satisfy each regulator individually.
+
+**Pain Points:**
+- 💸 **Expensive** - Multiple systems to maintain
+- 🔴 **Chaotic** - No coordination between systems
+- ⚠️ **Error-prone** - Data inconsistencies everywhere
+
+**The Solution Emerges:**
+To fix this, the industry created the **ISDA Common Domain Model (CDM)**: a single, digital "language" that defines exactly what a trade is, ensuring everyone means the same thing when they say "Swap" or "Bond."
+
+**Visual Elements:**
+- Broken tower illustration (Tower of Babel metaphor)
+- Tangled lines between banks and regulators
+- Multiple conflicting speech bubbles
+- Red warning signs and chaos indicators
+- Light appearing at the end: CDM logo/icon
+
+---
+
+### Chapter 2: The Fork in the Road (The Strategic Choice)
+**Timeframe:** CDM Introduction
+**Theme:** Decision Point
+**Color Palette:** Neutral grays transitioning to blue (Path A) and orange (Path B)
+
+**Narrative Content:**
+
+**Opening:**
+> "With this new common language available, a strategic divide opened up in the banking world. Two distinct paths emerged for adopting the CDM."
+
+**The Fork:**
+A literal fork in the road, with two paths diverging.
+
+**Path A: The Native Speaker** 🗣️
+**Bank:** J.P. Morgan
+**Strategy:** "Native Adoption"
+**Character/Metaphor:** A person speaking their native language fluently
+
+**The Choice:**
+> "J.P. Morgan chose the difficult path. Instead of just using the CDM to talk to regulators, they decided to **think in CDM**."
+
+**What This Means:**
+JPM is tearing out old "booking systems" and replacing them with infrastructure that speaks CDM natively. When a trade happens at JPM, it is **born as a CDM object**. It doesn't need to be translated; it already is in the correct format.
+
+**The Investment:**
+- **The Cost:** 💰💰💰 High upfront investment. Requires rewriting the bank's deep internal "plumbing"
+- **The Reward:** 🎯 They effectively deleted the distinction between "internal data" and "regulatory data." Immune to constant costs of translation. Paying down technical debt once and for all.
+
+---
+
+**Path B: The Translator** 📖
+**Banks:** Bank of America, Citi, Goldman Sachs, BNP Paribas
+**Strategy:** "Limited" or "Translation Layer"
+**Character/Metaphor:** A tourist using a phrasebook
+
+**The Choice:**
+> "Most other major banks chose the pragmatic path. They kept their decades-old legacy systems but built a 'Translation Layer' on top."
+
+**What This Means:**
+Think of this like a tourist using a phrasebook. The bank's internal systems still speak their old, proprietary language. When a regulator asks for a report, the bank pushes the data through a "translator" (often provided by vendors) to convert it into CDM.
+
+**The Trade-off:**
+- **The Benefit:** ✅ Faster and cheaper today. Don't have to rebuild core systems.
+- **The Risk:** ⚠️ They have walked into the "Rosetta Stone Trap"
+
+**Visual Elements:**
+- Literal fork in road (Y-shaped path)
+- Left path: Native speaker character, clean/modern aesthetic, blue tones
+- Right path: Tourist with phrasebook character, layers/complexity, orange tones
+- Decision signpost in the middle
+- Cost/benefit cards for each path
+- Visual metaphors: Native speaker vs phrasebook tourist
+
+---
+
+### Chapter 3: The Rosetta Stone Trap (The Hidden Risk)
+**Timeframe:** Ongoing Operations
+**Theme:** Dependency and Fragility
+**Color Palette:** Orange, yellow, red (warning/danger)
+
+**Narrative Content:**
+
+**Opening:**
+> "The research identifies a dangerous flaw in the peer strategy called **The Rosetta Stone Trap**."
+
+**The Trap Explained:**
+
+**The Dependency:**
+When a bank relies on a translation layer, they create a **permanent dependency on a map**.
+
+**What Breaks the Map:**
+- ⚠️ Regulator changes a rule → Map breaks
+- ⚠️ Bank updates an internal system → Map breaks
+- 🔧 **Result:** Must constantly fix and maintain this "Rosetta Stone"
+
+**The Obscured Truth:**
+Worse, this layer obscures the truth.
+
+**Comparison:**
+- **If a regulator asks: "Where did this number come from?"**
+  - 🟢 **JPM Engineer:** Points directly to the trade itself (instant data lineage)
+  - 🟠 **Peer Engineer:** Must dig through translation logic, often losing the data's "lineage" (history) in the process
+
+**The Never-Ending Cycle:**
+Every regulatory change or internal update requires:
+1. Identify what broke in the translation
+2. Update the mapping logic
+3. Test across all use cases
+4. Deploy the fix
+5. Monitor for new issues
+6. **Repeat forever** ♾️
+
+**Visual Elements:**
+- Rosetta Stone visual (ancient tablet with cracks)
+- Breaking/cracking animation
+- Chain/dependency web showing fragility
+- Side-by-side comparison: JPM (direct line) vs Peers (maze)
+- Maintenance cycle diagram (never-ending loop)
+- Warning signs and red alerts
+
+---
+
+### Chapter 4: The Upstream Ripple Effect (The Hidden Consequences)
+**Timeframe:** Regulatory Reporting (CCAR, FR Y-14)
+**Theme:** Cascading Problems vs Consistency
+**Color Palette:** Split screen - Blue/Green (JPM success) vs Orange/Red (Peer problems)
+
+**Narrative Content:**
+
+**Opening:**
+> "The impact of these strategies extends far beyond simple trade reporting. It radically alters how banks handle critical upstream reporting like **CCAR** (Comprehensive Capital Analysis and Review), **FR Y-14**, and **NFRR**."
+
+---
+
+**The Translator Strategy: "Two Truths" Problem** ⚠️
+
+**The Silo Problem:**
+Banks using translation layers face a dangerous "Two Truths" risk because the "Trade Reporting" team and the "Capital Planning" (CCAR) team **operate in silos**.
+
+**What Happens:**
+
+**Team 1: Trade Reporting**
+- Takes raw data → Maps it to CDM → Reports to CFTC
+- Defines "Notional Amount" using Map A logic
+
+**Team 2: CCAR Reporting**
+- Takes the **SAME** raw data → Maps it to different proprietary format → Reports to Fed
+- Defines "Notional Amount" using Map B logic
+
+**The Disaster:**
+If the two teams define terms like "Notional Amount" or "Maturity Date" slightly differently in their respective translation maps, the bank reports **contradictory data to different regulators**.
+
+**Real Impact:**
+- 🏦 **Federal Reserve sees:** $100M capital risk (from Map B)
+- 📊 **CFTC sees:** $101M trade transparency (from Map A)
+- 🕐 **Reconciliation:** Thousands of hours of manual labor
+- ⚠️ **Risk:** Regulatory penalties, loss of trust
+
+---
+
+**The Native Strategy: "One Truth" Advantage** ✅
+
+**How It Works:**
+Because J.P. Morgan adopted the CDM natively, the trade exists as a **standardized object at the source**.
+
+**Data Flow:**
+1. **Golden Source:** Trade is booked as a CDM object
+2. **Trade Reporting:** System reads the CDM object
+3. **CCAR/Risk:** Risk engine reads the **SAME** CDM object
+
+**The Guarantee:**
+Even though CCAR requires different calculations than trade reporting, they both start from the **exact same semantic definition** of the trade.
+
+**The Advantage:**
+- ✅ **Semantic Consistency:** One definition across the enterprise
+- ✅ **Auto-Update:** If the definition of a "Swap" changes in the CDM, it updates automatically for both Trade Report and Capital Report
+- ✅ **Zero Reconciliation:** No mapping divergence to reconcile
+- ✅ **Perfect Lineage:** Every number traces back to the same source
+
+**Contrast:**
+- **JPM:** One truth, many uses
+- **Peers:** Many truths, constant reconciliation
+
+**Visual Elements:**
+- Split-screen comparison
+- Left (Peers): Two diverging paths from same data, conflict symbol, manual reconciliation visual
+- Right (JPM): Single source radiating to multiple outputs, checkmarks, harmony symbol
+- Data flow diagrams with contrasting complexity
+- "Two Truths" showing Fed vs CFTC seeing different numbers
+- "One Truth" showing all regulators seeing consistent data
+- Time/cost comparison (thousands of hours vs zero hours)
+
+---
+
+### Chapter 5: The Future (AI & Blockchain)
+**Timeframe:** Tomorrow's Digital Economy
+**Theme:** Readiness vs Disadvantage
+**Color Palette:** Blue/Green (JPM thriving) vs Orange/Gray (Peers struggling)
+
+**Narrative Content:**
+
+**Opening:**
+> "The divergence matters most for what comes next. While peers are using the CDM as a dictionary to survive today's regulations, J.P. Morgan is learning the language to dominate tomorrow's digital economy."
+
+---
+
+**The Future of Finance: Two Technologies**
+
+**1. Blockchain / DLT (Distributed Ledger Technology)** ⛓️
+
+**The Opportunity:**
+The future of finance is "tokenized" assets living on blockchains. These blockchains require **standardized data** to work.
+
+**Path A (Native) - Ready:**
+- ✅ JPM's data is already standardized
+- ✅ Ready to plug directly into blockchain future
+- ✅ Can participate in tokenized asset markets immediately
+- 🚀 **Status:** Leading the digital economy
+
+**Path B (Translator) - Not Ready:**
+- ⚠️ Peers will need to build **another translation layer** to connect
+- ⚠️ Leaves them "off-chain" and slow
+- ⚠️ Must translate legacy → CDM → Blockchain protocol
+- 🐢 **Status:** Playing catch-up, additional complexity
+
+**2. Artificial Intelligence / Machine Learning** 🤖
+
+**The Requirement:**
+AI needs **clean, consistent data** to provide accurate insights.
+
+**Path A (Native) - Optimized:**
+- ✅ JPM's native data is ready for AI agents
+- ✅ Full context preserved (no translation loss)
+- ✅ No hallucinations from data quality issues
+- ✅ Can deploy advanced AI for risk, trading, compliance
+- 🎯 **Status:** AI-powered advantage
+
+**Path B (Translator) - Compromised:**
+- ⚠️ Peers are feeding AI "translated" data
+- ⚠️ Translation can lose context and nuance
+- ⚠️ Leading to "hallucinations" or bad insights
+- ⚠️ AI working with second-hand data
+- 🔴 **Status:** Limited AI effectiveness
+
+---
+
+**The Final Divergence:**
+
+**J.P. Morgan's Position:**
+> "We learned the language. Now we're ready for the future."
+- ✅ Native blockchain integration
+- ✅ AI-powered everything
+- ✅ Zero additional translation overhead
+- ✅ Competitive advantage for next decade
+
+**Peers' Position:**
+> "We saved money today, but now we're stuck."
+- ⚠️ Need new translation layers for every new technology
+- ⚠️ Always one step behind
+- ⚠️ Accumulating technical debt
+- ⚠️ Playing defense, not offense
+
+**Visual Elements:**
+- Future cityscape/digital world illustration
+- JPM path: Direct highway to future (blockchain nodes, AI models)
+- Peers path: Winding road with obstacles (translation barriers)
+- Technology icons: Blockchain, AI, tokens, smart contracts
+- Speed comparison: JPM rocket ship vs Peers car with flat tire
+- Final metaphor callback: Native speaker thriving vs Tourist lost with phrasebook
+- Closing statement visual: "Learning the language vs Using a dictionary"
+
+---
+
+## Summary Section (Closing)
+
+**Tagline:**
+> **"While peers are using the CDM as a dictionary to survive today's regulations, J.P. Morgan is learning the language to dominate tomorrow's digital economy."**
+
+**Key Takeaways (Visual Cards):**
+
+1. **Strategic Choice:**
+   - Native vs Translation Layer
+   - High upfront cost vs Low initial cost
+   - Long-term advantage vs Short-term pragmatism
+
+2. **Hidden Risks:**
+   - Rosetta Stone Trap
+   - Two Truths Problem
+   - Obscured data lineage
+
+3. **Future Readiness:**
+   - AI/Blockchain native compatibility vs New translation layers
+   - Competitive advantage vs Playing catch-up
+
+---
+
+## Technical Implementation
+
+### Tech Stack
+```json
+{
+  "framework": "React 18+ with Vite",
+  "styling": "Tailwind CSS + custom CSS for illustrations",
+  "animations": "Framer Motion",
+  "scroll": "react-scroll or custom intersection observer",
+  "illustrations": "React Icons + custom SVG components",
+  "state": "React Context or Zustand"
+}
+```
+
+### Component Structure
+```
+src/
+├── components/
+│   ├── chapters/
+│   │   ├── Chapter1_TowerOfBabel.jsx
+│   │   ├── Chapter2_ForkInRoad.jsx
+│   │   ├── Chapter3_RosettaTrap.jsx
+│   │   ├── Chapter4_RippleEffect.jsx
+│   │   ├── Chapter5_TheFuture.jsx
+│   │   └── SummarySection.jsx
+│   ├── shared/
+│   │   ├── ChapterContainer.jsx
+│   │   ├── ChapterHeader.jsx
+│   │   ├── NarrativeText.jsx
+│   │   ├── MetaphorIllustration.jsx
+│   │   ├── ComparisonCard.jsx
+│   │   ├── CharacterAvatar.jsx     # Native Speaker & Tourist
+│   │   ├── PathVisual.jsx          # Fork in road, diverging paths
+│   │   └── ProgressBar.jsx         # Story progress indicator
+│   ├── illustrations/
+│   │   ├── TowerOfBabel.jsx        # Custom SVG
+│   │   ├── ForkRoad.jsx            # Y-shaped path
+│   │   ├── RosettaStone.jsx        # Ancient tablet with cracks
+│   │   ├── DataFlowDiagram.jsx     # One Truth vs Two Truths
+│   │   ├── FutureCityscape.jsx     # Digital future visual
+│   │   └── SpaghettiFallacy.jsx    # Tangled systems
+│   ├── Navigation.jsx              # Chapter navigation
+│   └── ScrollProgress.jsx          # Visual progress through story
+├── App.jsx
+├── main.jsx
+└── styles/
+    └── index.css
+```
+
+### Data Structure
+
+```javascript
+const chapters = [
+  {
+    id: 1,
+    title: "The Tower of Babel",
+    subtitle: "After the 2008 Crisis",
+    theme: "problem",
+    color: "gray",
+    icon: "🏛️",
+    sections: [
+      {
+        type: "narrative",
+        content: "After the 2008 financial crisis, regulators worldwide demanded transparency..."
+      },
+      {
+        type: "problem-list",
+        items: [
+          { region: "US", demand: "Format A", flag: "🇺🇸" },
+          { region: "Europe", demand: "Format B", flag: "🇪🇺" },
+          { region: "Asia", demand: "Format C", flag: "🇯🇵" }
+        ]
+      },
+      {
+        type: "illustration",
+        component: "TowerOfBabel",
+        caption: "Spaghetti Architecture"
+      },
+      {
+        type: "solution",
+        content: "The ISDA Common Domain Model (CDM)",
+        highlight: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "The Fork in the Road",
+    subtitle: "Two Paths Emerge",
+    theme: "choice",
+    color: "split",
+    icon: "🔀",
+    sections: [
+      {
+        type: "narrative",
+        content: "With this new common language available, a strategic divide opened up..."
+      },
+      {
+        type: "fork-illustration",
+        component: "ForkRoad"
+      },
+      {
+        type: "dual-paths",
+        pathA: {
+          title: "The Native Speaker",
+          bank: "J.P. Morgan",
+          character: "native-speaker",
+          strategy: "Native Adoption",
+          metaphor: "Speaking the language fluently",
+          cost: { level: "high", when: "upfront", icon: "💰💰💰" },
+          reward: { level: "high", when: "long-term", icon: "🎯" }
+        },
+        pathB: {
+          title: "The Translator",
+          banks: ["Bank of America", "Citi", "Goldman Sachs"],
+          character: "tourist-phrasebook",
+          strategy: "Translation Layer",
+          metaphor: "Using a phrasebook",
+          benefit: { level: "low-cost", when: "today", icon: "✅" },
+          risk: { level: "high", when: "future", icon: "⚠️" }
+        }
+      }
+    ]
+  },
+  // ... chapters 3, 4, 5
+];
+```
+
+---
+
+## Interactive Features
+
+### 1. **Scroll-Based Story Progression**
+- Horizontal scroll on desktop (like a book/timeline)
+- Vertical scroll on mobile
+- Smooth transitions between chapters
+- Auto-advance option with pause control
+
+### 2. **Progress Indicator**
+- Top/side navigation showing current chapter
+- Progress bar showing % through story
+- Chapter thumbnails for quick navigation
+- "Chapters completed" counter
+
+### 3. **Character Following**
+- Native Speaker and Tourist characters appear throughout
+- Animate in at key moments to provide context
+- React to events (happy/worried expressions)
+- Guide users through the narrative
+
+### 4. **Interactive Comparisons**
+- Hover over Path A to highlight advantages
+- Hover over Path B to highlight risks
+- Toggle between "Today" vs "Future" views
+- Side-by-side comparison mode
+
+### 5. **Metaphor Animations**
+- Tower of Babel: Crumbling/fragmented animation
+- Fork in Road: Paths diverging with glow effects
+- Rosetta Stone: Cracking animation on scroll
+- Data Flow: Animated arrows showing flow differences
+- Future: Rocket vs car animation
+
+### 6. **Narrative Audio (Optional)**
+- Text-to-speech narration option
+- Background ambient sound per chapter
+- Sound effects for key moments
+
+### 7. **Bookmark & Share**
+- Bookmark current chapter
+- Share specific chapter links
+- Generate summary for sharing
+
+---
+
+## Visual Design Guidelines
+
+### Color Palette by Chapter
+
+**Chapter 1 (Tower of Babel) - Problem:**
+- Primary: `#374151` (Dark Gray)
+- Accent: `#DC2626` (Red - Crisis)
+- Background: `#1F2937`
+- Text: `#F3F4F6`
+
+**Chapter 2 (Fork) - Choice:**
+- Neutral: `#6B7280` (Gray)
+- Path A: `#3B82F6` (Blue - JPM begins)
+- Path B: `#F59E0B` (Orange - Peers begin)
+- Background: `#FFFFFF`
+
+**Chapter 3 (Rosetta Trap) - Warning:**
+- Primary: `#F59E0B` (Orange)
+- Accent: `#DC2626` (Red - Danger)
+- Background: `#FFFBEB`
+- Highlights: `#FCD34D` (Yellow)
+
+**Chapter 4 (Ripple Effect) - Divergence:**
+- Split screen:
+  - Left (Peers): `#F59E0B` to `#DC2626` gradient
+  - Right (JPM): `#3B82F6` to `#10B981` gradient
+- Background: `#F9FAFB`
+
+**Chapter 5 (Future) - Resolution:**
+- JPM Success: `#10B981` (Green), `#3B82F6` (Blue)
+- Peers Struggle: `#6B7280` (Gray), `#F59E0B` (Orange fading)
+- Background: `#EFF6FF` (Light blue - digital future)
+
+### Typography
+
+**Story Text:**
+- Narrative: Georgia or Merriweather (serif for storytelling), 18-20px
+- Quotes: Italic, 24px, centered
+- Chapter Titles: Inter Bold, 48px
+- Subtitles: Inter Regular, 24px
+
+**UI Elements:**
+- Labels: Inter Medium, 14-16px
+- Buttons: Inter SemiBold, 16px
+- Captions: Inter Regular, 14px, gray
+
+### Character Design
+
+**The Native Speaker (J.P. Morgan):**
+- Professional, confident appearance
+- Blue suit or business attire
+- Speaking without aids
+- Modern, clean aesthetic
+- Expressions: Confident, forward-looking
+
+**The Tourist (Peers):**
+- Casual, less prepared appearance
+- Holding a phrasebook or translation device
+- Orange/yellow color scheme
+- Slightly overwhelmed look
+- Expressions: Uncertain, reactive
+
+### Metaphor Visuals
+
+**Tower of Babel:**
+- Tall, fragmented structure
+- Different colored blocks (representing different systems)
+- Cracks and instability
+- Speech bubbles in different "languages" (data formats)
+
+**Fork in the Road:**
+- Y-shaped path
+- Clear, clean left path (blue)
+- Complex, winding right path (orange)
+- Signpost showing choices
+
+**Rosetta Stone:**
+- Ancient tablet aesthetic
+- Visible cracks spreading
+- Translation text fading/becoming illegible
+- Warning symbols
+
+---
+
+## Animation Specifications
+
+### Scroll Animations (Framer Motion)
+
+```javascript
+// Chapter entrance
+const chapterVariants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
+};
+
+// Path divergence
+const pathVariants = {
+  initial: { scale: 1 },
+  diverge: {
+    scale: 1.1,
+    transition: { duration: 1.2, ease: "easeInOut" }
+  }
+};
+
+// Rosetta Stone cracking
+const crackVariants = {
+  intact: { pathLength: 0 },
+  cracking: {
+    pathLength: 1,
+    transition: { duration: 2, ease: "easeIn" }
+  }
+};
+```
+
+### Key Animation Moments
+
+1. **Tower of Babel:** Fragments scatter on scroll-in
+2. **Fork appears:** Paths split apart smoothly
+3. **Characters enter:** Slide in from sides
+4. **Rosetta cracks:** Progressive crack spread
+5. **Two Truths split:** Data diverges into two streams
+6. **One Truth radiates:** Central point pulses to multiple outputs
+7. **Future scene:** JPM rockets forward, Peers lag behind
+
+---
+
+## Layout Specifications
+
+### Desktop (Horizontal Scroll)
+```
+┌───────┬───────────────────────────────────────┬───────┐
+│       │                                       │       │
+│   ←   │         CHAPTER 1                     │   →   │
+│       │     [Tower of Babel Visual]          │       │
+│       │                                       │       │
+│       │     "After the 2008 crisis..."        │       │
+│       │                                       │       │
+│       │     [Content sections]                │       │
+│       │                                       │       │
+└───────┴───────────────────────────────────────┴───────┘
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         [Progress: ▓▓▓▓░░░░░░░░░░] 25%
+         Ch1  Ch2  Ch3  Ch4  Ch5  Summary
+```
+
+### Mobile (Vertical Scroll)
+- Full-width chapters stacked vertically
+- Swipe up to progress through story
+- Sticky chapter navigation at top
+- Floating progress indicator
+
+---
+
+## Accessibility
+
+- **ARIA labels** for all interactive elements
+- **Keyboard navigation** (arrow keys to navigate chapters)
+- **Focus management** when changing chapters
+- **Alt text** for all illustrations and metaphors
+- **High contrast mode** option
+- **Reduced motion** respect (prefers-reduced-motion)
+- **Screen reader** friendly narrative flow
+
+---
+
+## Performance Optimization
+
+- **Lazy load** chapters (only load current + adjacent)
+- **Image optimization** (WebP with fallbacks)
+- **Code splitting** by chapter
+- **Preload** next chapter on scroll approach
+- **Minimize SVG** complexity for smooth animations
+- **Debounce** scroll events
+- **Use CSS transforms** for animations (GPU acceleration)
+
+---
+
+## Deliverables Checklist
+
+- [ ] Five complete chapters with all narrative content
+- [ ] Smooth horizontal/vertical scroll experience
+- [ ] Character illustrations (Native Speaker & Tourist)
+- [ ] All metaphor visuals (Tower, Fork, Rosetta, etc.)
+- [ ] Interactive comparisons (hover, toggle views)
+- [ ] Progress indicator and navigation
+- [ ] Scroll-based animations
+- [ ] Responsive design (desktop horizontal, mobile vertical)
+- [ ] Accessibility features (keyboard nav, ARIA, reduced motion)
+- [ ] Performance optimized (lazy loading, code splitting)
+- [ ] Clean, commented code
+- [ ] README with setup and story notes
+
+---
+
+## Success Criteria
+
+**Narrative Engagement:**
+- ✅ Story flows naturally and is easy to follow
+- ✅ Metaphors enhance understanding (not confuse)
+- ✅ Emotional arc: Problem → Choice → Risk → Consequence → Future
+- ✅ Non-technical audiences can understand complex concepts
+
+**Visual Storytelling:**
+- ✅ Each chapter has distinct visual identity
+- ✅ Characters guide the narrative effectively
+- ✅ Illustrations support (not distract from) the story
+- ✅ Color progression matches emotional arc
+
+**Interactivity:**
+- ✅ Scroll experience is smooth and intuitive
+- ✅ Animations enhance (not slow down) the story
+- ✅ Navigation allows both linear and random access
+- ✅ Comparisons are clear and compelling
+
+**Technical Execution:**
+- ✅ Loads fast (< 3 seconds initial)
+- ✅ Smooth 60fps animations
+- ✅ No janky scrolling
+- ✅ Works on all modern browsers
+
+---
+
+## Getting Started
+
+```bash
+# Initialize project
+npm create vite@latest isda-cdm-tale -- --template react
+cd isda-cdm-tale
+
+# Install dependencies
+npm install tailwindcss postcss autoprefixer framer-motion lucide-react react-scroll zustand
+
+# Initialize Tailwind
+npx tailwindcss init -p
+
+# Start development
+npm run dev
+```
+
+### Development Approach
+
+1. **Start with structure:** Build chapter navigation and scroll mechanics
+2. **Chapter 1 first:** Complete one full chapter as template
+3. **Build metaphor library:** Create reusable illustration components
+4. **Character system:** Implement Native Speaker and Tourist characters
+5. **Progressive enhancement:** Add animations after structure is solid
+6. **Test narrative flow:** Ensure story makes sense end-to-end
+7. **Polish and optimize:** Refine animations, performance, accessibility
+
+---
+
+## Story Tone & Voice
+
+**Narrative Style:**
+- Clear, accessible language (avoid jargon)
+- Use metaphors consistently (language learning, travel, etc.)
+- Build tension through chapters (problem → risk → consequence)
+- Resolution that reinforces the strategic message
+
+**Key Phrases to Emphasize:**
+- "Born as a CDM object"
+- "Rosetta Stone Trap"
+- "Two Truths Problem"
+- "Learning the language vs using a dictionary"
+
+**Emotional Arc:**
+- Ch1: Confusion and frustration (Tower of Babel)
+- Ch2: Hope and divergence (Two paths appear)
+- Ch3: Warning and concern (The trap revealed)
+- Ch4: Consequences and contrast (One truth vs two truths)
+- Ch5: Resolution and future (Clear winner emerges)
+
+---
+
+## Final Notes
+
+This is a **narrative-driven** infographic designed for **executive audiences** who need to understand the strategic implications without technical depth. Focus on:
+
+- **Clarity** over complexity
+- **Story** over specifications
+- **Impact** over implementation details
+- **Metaphors** over mechanics
+
+The goal is for a C-suite executive to finish the story and think: *"Wow, we need to be the Native Speaker, not the Tourist."*
+
+Make it compelling, beautiful, and impossible to forget.
